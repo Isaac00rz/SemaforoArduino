@@ -1,5 +1,5 @@
 #define led_1 4
-#define led_2 5
+#define led_2 2
 #define led_3 7
 #define led_4 12
 #define led_5 13
@@ -19,17 +19,17 @@ void setup() {
 }
 
 void loop() {
-  valor = analogRead(po)*10;
+  valor = analogRead(po)+1000;
   Serial.print(valor);
   while(digitalRead(boton)==LOW){
     digitalWrite(led_5,HIGH);
     digitalWrite(led_1,HIGH);
-    for(i==0;i<10;i++){
+    for(i==0;i<15;i++){
       if(digitalRead(boton)==HIGH){
         salto();
         break;
       }else{
-        delay(valor);
+        delay(100);
       }
     }
     for(int i=0;i<3;i++){
@@ -39,7 +39,7 @@ void loop() {
         break;
       }else{
         digitalWrite(led_1,HIGH);
-        delay(2000);
+        delay(1000);
         digitalWrite(led_1,LOW);
         delay(valor);
       }
